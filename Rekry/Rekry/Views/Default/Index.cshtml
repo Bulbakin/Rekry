@@ -93,7 +93,12 @@ Opiskeletko?<br />
 </form><br />
 <p>@Numerot</p>
 
-<h1>Rekry (Backend #2)</h1>
+<h1>Rekry (Backend #2 ja #3)</h1>
+
+<form name="submit2" action="Index" method="post" id="form2">
+	@Html.DropDownList("Tuotenumero", ViewBag.Tuote as SelectList, "Valitse tuotenumero")<br />
+	<input type="submit" value="Hae" name="sub" />
+</form><br />
 
 <table style="text-align:left; width: 100%;">
 	<tr>
@@ -146,3 +151,7 @@ Opiskeletko?<br />
 
 	}
 </table><br />
+
+<a href="Luo">
+	<input type="button" value="Lisää tuote"/>
+</a>

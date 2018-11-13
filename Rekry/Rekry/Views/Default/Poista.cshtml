@@ -1,0 +1,57 @@
+﻿@model Rekry.Models.Tuote
+@{
+	ViewBag.Title = "Poista";
+}
+
+<h1>Poista</h1><br />
+
+<h2>Haluatko varmasti poistaa tuotteen?</h2><br />
+<table style="text-align:left; width: 100%;">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.Tuotenumero)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Kategoria)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Nimi)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Hinta)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Kuvaus)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Muokattu)
+		</th>
+	</tr>
+	<tr>
+		<td>
+			@Html.DisplayFor(model => model.Tuotenumero)
+		</td>
+		<td>
+			@Html.DisplayFor(model => model.Kategoria)
+		</td>
+		<td>
+			@Html.DisplayFor(model => model.Nimi)
+		</td>
+		<td>
+			@Html.DisplayFor(model => model.Hinta)
+		</td>
+		<td>
+			@Html.DisplayFor(model => model.Kuvaus)
+		</td>
+		<td>
+			@Html.DisplayFor(model => model.Muokattu)
+		</td>
+	</tr>
+</table><br />
+
+<form name="submit" method="post">
+	@Html.AntiForgeryToken()
+
+	<input type="submit" value="Poista" /><br />
+	@Html.ActionLink("Back to List", "/Index")
+</form>
