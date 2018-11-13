@@ -1,0 +1,69 @@
+﻿
+@{
+	ViewBag.Title = "Index";
+}
+
+<h1>Rekry (Frontend #1)</h1>
+
+<table style="text-align:left; width: 100%;">
+	<thead>
+		<tr>
+			<th>Etunimi</th>
+			<th>Sukunimi</th>
+			<th>Ikä</th>
+			<th>Sukupuoli</th>
+			<th>Opiskelija</th>
+		</tr>
+	</thead>
+	<tr>
+		<td>Jukka</td>
+		<td>Aitakangas</td>
+		<td>34</td>
+		<td>Mies</td>
+		<td>Ei</td>
+	</tr>
+	<tr>
+		<td>Oskar</td>
+		<td>Kaskinen</td>
+		<td>27</td>
+		<td>Mies</td>
+		<td>Kyllä</td>
+	</tr>
+	<tr>
+		<td>Esko</td>
+		<td>Jokelainen</td>
+		<td>54</td>
+		<td>Mies</td>
+		<td>Ei</td>
+	</tr>
+	<tr style="border-bottom: 1px solid">
+		<td>Anna</td>
+		<td>Hirvikoski</td>
+		<td>39</td>
+		<td>Nainen</td>
+		<td>Ei</td>
+	</tr>
+	<tfoot>
+		<tr style="color: red">
+			<td>Henkilöiden määrä:</td>
+			<td>4</td>
+		</tr>
+	</tfoot>
+</table><br />
+
+<input type="text" placeholder="Etunimi" /><br />
+<input type="text" placeholder="Sukunimi" /><br />
+<input type="number" placeholder="Ikä" /><br />
+
+Sukupuoli:<br />
+<select>
+	<option>Mies</option>
+	<option>Nainen</option>
+</select><br />
+
+Opiskeletko?<br />
+<input type="radio" name="opiskelija" value="Kylla" /> Kyllä<br />
+<input type="radio" name="opiskelija" value="Ei" /> En<br />
+
+<input type="button" value="Lähetä" />
+
