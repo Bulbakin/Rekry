@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Rekry.Models.Tuote>
 @{
 	ViewBag.Title = "Index";
 }
@@ -93,3 +93,56 @@ Opiskeletko?<br />
 </form><br />
 <p>@Numerot</p>
 
+<h1>Rekry (Backend #2)</h1>
+
+<table style="text-align:left; width: 100%;">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.Tuotenumero)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Kategoria)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Nimi)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Hinta)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Kuvaus)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Muokattu)
+		</th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.Tuotenumero)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Kategoria)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Nimi)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Hinta)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Kuvaus)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Muokattu)
+			</td>
+			<td>
+				@Html.ActionLink("Muokkaa", "Muokkaa", new { id = item.Tuotenumero }) |
+				@Html.ActionLink("Poista", "Poista", new { id = item.Tuotenumero })
+			</td>
+		</tr>
+
+	}
+</table><br />

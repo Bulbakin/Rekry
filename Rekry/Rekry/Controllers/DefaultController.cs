@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rekry.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,16 @@ namespace Rekry.Controllers
 {
     public class DefaultController : Controller
     {
+        private RekryEntities db = new RekryEntities();
+
         // GET: Default
         public ActionResult Index()
         {
-            return View();
+            var getTuotteet = db.Tuote.ToList();
+            SelectList list = new SelectList(getTuotteet, "Tuotenumero", "Tuotenumero");
+            ViewBag.Tuote = list;
+
+            return View(getTuotteet);
         }
     }
 }
