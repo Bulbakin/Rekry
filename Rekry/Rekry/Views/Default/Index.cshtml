@@ -2,6 +2,17 @@
 @{
 	ViewBag.Title = "Index";
 }
+@{
+	var Numerot = "";
+	if (IsPost)
+	{
+		var num1 = Request["valinta"];
+		var num2 = Request["valinta2"];
+		Numerot = "Valitsit numerot " + num1 + " ja " + num2 + ".";
+	}
+
+	List<SelectListItem> Tuotteet = new List<SelectListItem>();
+}
 
 <h1>Rekry (Frontend #1)</h1>
 
@@ -66,4 +77,19 @@ Opiskeletko?<br />
 <input type="radio" name="opiskelija" value="Ei" /> En<br />
 
 <input type="button" value="Lähetä" />
+
+<h1>Rekry (Backend #1)</h1>
+<form name="submit" action="Index" method="post" id="form1">
+	Valitse numero:<br />
+	<input type="radio" name="valinta" value="1" /> 1<br />
+	<input type="radio" name="valinta" value="2" /> 2<br />
+	<input type="radio" name="valinta" value="3" /> 3<br />
+
+	Valitse toinen numero:<br />
+	<input type="radio" name="valinta2" value="4" /> 4<br />
+	<input type="radio" name="valinta2" value="5" /> 5<br />
+	<input type="radio" name="valinta2" value="6" /> 6<br />
+	<input type="submit" value="Lähetä" name="sub" />
+</form><br />
+<p>@Numerot</p>
 
